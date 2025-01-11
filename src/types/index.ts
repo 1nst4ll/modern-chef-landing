@@ -1,3 +1,5 @@
+export * from './schema';
+
 export interface NavItem {
   href: string;
   label: string;
@@ -34,22 +36,10 @@ export interface GalleryImage {
   alt: string;
 }
 
-export interface FormData {
-  name: string;
-  email: string;
-  message: string;
-}
-
 export type FormStatus = 'idle' | 'sending' | 'success' | 'error';
 
 export interface LanguageContextType {
   isSpanish: boolean;
   setIsSpanish: (value: boolean) => void;
-}
-
-export type TransitionStyles = {
-  entering: { opacity: number };
-  entered: { opacity: number };
-  exiting: { opacity: number };
-  exited: { opacity: number };
+  toggleLanguage: () => void;
 };
