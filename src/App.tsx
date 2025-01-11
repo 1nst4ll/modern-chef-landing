@@ -1,14 +1,15 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { Layout } from './components/layout/Layout';
-import { HeroSection } from './components/HeroSection';
-import { ServicesSection } from './components/ServicesSection';
-import { AboutSection } from './components/AboutSection';
-import { GallerySection } from './components/GallerySection';
-import { ReviewsSection } from './components/ReviewsSection';
-import { ContactForm } from './components/ContactForm';
+import { HeroSection } from './components/sections/HeroSection';
+import { ServicesSection } from './components/sections/ServicesSection';
+import { AboutSection } from './components/sections/AboutSection';
+import { GallerySection } from './components/sections/GallerySection';
+import { ReviewsSection } from './components/sections/ReviewsSection';
+import { ContactForm } from './components/sections/ContactForm';
+import { useLanguage } from './contexts/LanguageContext';
 
 const App: FC = () => {
-  const [isSpanish, setIsSpanish] = useState<boolean>(false);
+  const { isSpanish, setIsSpanish } = useLanguage();
 
   return (
     <Layout isSpanish={isSpanish} setIsSpanish={setIsSpanish}>
